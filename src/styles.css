@@ -1,0 +1,134 @@
+@import "tailwindcss/index.css";
+
+@import "./font-zain.css";
+@import "./font-noto-sans.css";
+@import "./jetbrains-mono.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* https://www.tints.dev/palette/v1:Z3JheXwxNjFDMjd8OTUwfHB8LTJ8LTJ8MHwxMDV8YQ */
+@theme {
+  --color-gray-50: #ffffff;
+  --color-gray-100: #f1f1f1;
+  --color-gray-200: #d2d5d7;
+  --color-gray-300: #b3b9c0;
+  --color-gray-400: #949fab;
+  --color-gray-500: #798592;
+  --color-gray-600: #606c7a;
+  --color-gray-700: #495362;
+  --color-gray-800: #333c49;
+  --color-gray-900: #1f2631;
+  --color-gray-950: #161c27;
+}
+
+:root {
+  @apply bg-slate-50 dark:bg-gray-950;
+  font-family: 'Noto Sans', sans-serif;
+  font-variant-ligatures: none;
+  @apply font-normal text-gray-600 dark:text-gray-400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Zain', serif;
+}
+
+code {
+  font-family: 'Jetbrains Mono', monospace;
+}
+
+.code-inline {
+  @apply text-sm rounded-md bg-gray-100 dark:bg-gray-900 p-1 py-0.5 px-2;
+}
+
+button {
+  cursor: pointer;
+}
+
+.btn {
+  @apply flex items-center gap-2 text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 font-medium rounded-lg text-sm p-2.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 focus:outline-4 outline-offset-0;
+
+  .icon {
+    @apply block w-5 h-5;
+  }
+}
+
+.btn-sm {
+  @apply text-xs px-3 py-2;
+}
+
+.btn-rounded {
+  @apply rounded-full;
+}
+
+.btn-primary {
+  @apply text-white bg-blue-700 hover:bg-blue-800 focus:outline-blue-300 font-medium dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:outline-blue-800;
+}
+
+.btn-secondary {
+  @apply shadow-blue-700 dark:shadow-blue-500 text-blue-700 border border-blue-700 hover:bg-blue-50 focus:outline-blue-300 font-medium text-center dark:border-blue-500 dark:text-blue-500 dark:bg-gray-900 dark:hover:bg-blue-500/10 dark:focus:outline-blue-800;
+}
+
+.btn-tertiary {
+  @apply shadow-gray-300 dark:shadow-gray-600 text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 font-medium rounded-lg text-sm dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 focus:outline-gray-200 dark:focus:outline-gray-700;
+}
+
+p {
+  @apply my-4;
+}
+
+hr {
+  @apply border-gray-200 my-16 dark:border-gray-700;
+}
+
+.heading-main {
+  @apply mb-4 text-6xl font-bold leading-none tracking-tight lg:text-7xl text-gray-900 dark:text-white;
+}
+
+.heading-primary {
+  @apply mb-4 mt-16 text-4xl font-bold text-gray-900 dark:text-white;
+}
+
+.heading-secondary {
+  @apply mb-4 mt-12 text-2xl font-bold text-gray-900 dark:text-white;
+}
+
+:not(:is(h1, h2, h3, h4, h5, h6)) > a {
+  @apply font-medium text-blue-600 underline dark:text-blue-500 hover:no-underline;
+}
+
+:is(h1, h2, h3, h4, h5, h6):hover a::before {
+  content: "#";
+  position: absolute;
+  margin-left: -1.5ch;
+  @apply text-blue-600;
+}
+
+@variant dark {
+  :is(h1, h2, h3, h4, h5, h6):hover a::before {
+    @apply text-blue-500;
+  }
+}
+
+/* remove background from code mirror editor to make it blend in more */
+.cm-editor {
+  background: none;
+}
+
+.cm-placeholder {
+  @apply text-gray-600! dark:text-gray-400!;
+}
+
+.cm-matchingBracket {
+  background-color: initial !important;
+  outline: initial !important;
+  border-radius: initial !important;
+}
+
+.cm-focused {
+  box-shadow: none !important;
+}
+
+/* make tabler icons thinner */
+i-tabler {
+  stroke-width: 1.5px !important;
+}
