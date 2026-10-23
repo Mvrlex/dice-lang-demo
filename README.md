@@ -3,7 +3,7 @@
 Demo application and documentation for [dice-lang](https://github.com/Mvrlex/dice-lang),
 a language for describing dice rolls in tabletop roleplaying games.
 
-View it live at [dice-lang.com](https://dice-lang.com).
+[View it live](https://mvrlex.github.io/dice-lang-demo/)
 
 ## Local Setup
 
